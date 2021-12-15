@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -5,7 +6,6 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Registration {
-
 
     public void registration(Scanner scanner) {
 
@@ -53,6 +53,7 @@ public class Registration {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+  
     }
 
 }

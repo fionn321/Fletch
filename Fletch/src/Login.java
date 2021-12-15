@@ -2,7 +2,6 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Login {
-
     public boolean login (Scanner scanner){
         boolean valid = false;
         try{
