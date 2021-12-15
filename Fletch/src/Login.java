@@ -2,13 +2,13 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class Login {
-    public static void main (String[] args){
-
-
-        try(Scanner scanner = new Scanner(System.in)){
-
+    public boolean login (Scanner scanner){
+        boolean valid = false;
+        try{
             System.out.print(" Enter Username ");
             String  username = scanner.nextLine();
+
+            Customer customer = new Customer(username);
 
             System.out.print(" Enter Password ");
             String  password = scanner.nextLine();
@@ -24,16 +24,19 @@ public class Login {
             while(rs.next()) {
                 count = count + 1;
             }
-
             if(count == 1){
                 System.out.println(" You have logged in");
-
+                valid = true;
             }else{
                 System.out.println("Invalid password or username");
+                valid = false;
             }
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+
+        return valid;
+
     }
 }
