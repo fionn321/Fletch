@@ -1,3 +1,4 @@
+
 import java.sql.*;
 
 public class Customer implements User {
@@ -62,5 +63,6 @@ public class Customer implements User {
     public Boolean getAdmin(){
         return  this.admin;
     }
+
 
 }
