@@ -7,8 +7,7 @@ import java.util.Scanner;
 
 public class Registration {
 
-
-    public static void main(String[] args) {
+    public void registration(Scanner scanner) {
 
         PreparedStatement stmt = null;
         Connection conn = null;
@@ -51,9 +50,10 @@ public class Registration {
             stmt.setLong(6, phonenumber);
             stmt.executeUpdate();
 
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+  
     }
 
 }
