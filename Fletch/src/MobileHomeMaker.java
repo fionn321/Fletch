@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class MobileHomeMaker {
 
-    public static void main(String[] args){
+    public void mobileHomeMaker(){
         Scanner s = new Scanner(System.in);
 
         MobileHome mobileHome = new BasicMobileHome();
@@ -51,10 +51,16 @@ public class MobileHomeMaker {
             mobileHome = new Bathrooms(mobileHome);
         }
 
+        FeatureFactory featureFactory = new FeatureFactory();
+        System.out.println("Enter any of the following features the mobile home has access to: 1 Beach");
+        String feature = s.nextLine();
+        Features listOfFeatures = featureFactory.getFeature(feature);
+
         System.out.println(mobileHome.getDescription());
         System.out.println("The cost of the stay will be " + mobileHome.getCost());
         System.out.println("Max accommodation is " + mobileHome.getMaxCapacity());
         System.out.println("Number of showers is " + mobileHome.getNumberOfShowers());
+        System.out.println("This mobileHome also has the following features " );
+        listOfFeatures.description();
     }
-
 }
